@@ -19,12 +19,10 @@ public class AccountService {
         this.accountDAO = accountDAO;
     }
 
-    //Get all Accounts
     public List<Account> getAllAccounts() {
         return accountDAO.getAllAccounts();
     }
 
-    //Register New Account
     public Account addAccount(Account account) {
         if(account.getPassword().length() < 4){
             return null;

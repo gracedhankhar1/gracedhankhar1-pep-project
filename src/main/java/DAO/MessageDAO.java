@@ -13,7 +13,6 @@ public class MessageDAO {
         Connection connection = ConnectionUtil.getConnection();
         List<Message> messages = new ArrayList<>();
         try {
-            //Write SQL logic here
             String sql = "select * from message";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet rs = preparedStatement.executeQuery();
@@ -56,11 +55,9 @@ public class MessageDAO {
     public Message getMessageByID(int id){
         Connection connection = ConnectionUtil.getConnection();
         try {
-            //Write SQL logic here
             String sql = "select * from message where message_id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-            //write preparedStatement's setInt method here.
             preparedStatement.setInt(1, id);
 
             ResultSet rs = preparedStatement.executeQuery();
@@ -80,11 +77,9 @@ public class MessageDAO {
     public Message deleteMessageByID(int id){
         Connection connection = ConnectionUtil.getConnection();
         try {
-            //Write SQL logic here
             String sql = "delete from message where message_id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-            //write preparedStatement's setInt method here.
             preparedStatement.setInt(1, id);
 
             ResultSet rs = preparedStatement.executeQuery();
@@ -104,11 +99,9 @@ public class MessageDAO {
     public void updateMessage(int id, Message message){
         Connection connection = ConnectionUtil.getConnection();
         try {
-            //Write SQL logic here
             String sql = "update message set message_text = ? where message_id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-            //write PreparedStatement setString and setInt methods here.
             preparedStatement.setString(1, message.getMessage_text());
             preparedStatement.setInt(2, id);
 
@@ -123,11 +116,9 @@ public class MessageDAO {
         List<Message> messages = new ArrayList<>();
 
         try {
-            //Write SQL logic here
             String sql = "select * from message where posted_by = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-            //write preparedStatement's setInt method here.
             preparedStatement.setInt(1, account_id);
 
             ResultSet rs = preparedStatement.executeQuery();

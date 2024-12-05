@@ -133,6 +133,7 @@ public class SocialMediaController {
 
     }
 
+    //Get messsages by account ID
     public void getMessagesByAccountIDHandler(Context ctx){
         int account_id = Integer.parseInt(ctx.pathParam("account_id"));
         List<Message> messages = messageService.getMessagesByAccountID(account_id);
